@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>StatusHQ Home</h1>
+  <p>Welcome to StatusHQ, a website developed by <em>Charlie, Peter and Nat</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>You have the following applications:</p>
+  <ul>
+    <li><strong>Total Applications:</strong> {{ num_apps }}</li>
+    <li><strong>In Progress:</strong> {{ num_inprogress }}</li>
+    <li><strong>Applied:</strong> {{ num_applied }}</li>
+    <li><strong>Interviewing:</strong> {{ num_interviewing }}</li>
+    <li><strong>Offers:</strong> {{ num_offered }}</li>
+    <li><strong>Denied:</strong> {{ num_denied }}</li>
+    <li><strong>Removed:</strong> {{ num_removed }}</li>
+  </ul>
+{% endblock %}

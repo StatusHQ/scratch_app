@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Applications</h1>
+  {% if applications_list %}
+  <ul>
+    {% for application in applications_list %}
+      <li>
+        <a href="{{ application.get_absolute_url }}">{{ application.company }} {{ application.position }} </a> ({{ application.get_status_display }})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>You have no current applications.</p>
+  {% endif %}       
+{% endblock %}
