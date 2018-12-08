@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # added to link to app 
+    # added to link to app
     'applications.apps.ApplicationsConfig',
 ]
 
@@ -83,8 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'applications',
-        'USER': 'ndellam',
-        'PASSWORD': '',
+        'USER': 'postgres',
+        'PASSWORD': 'statushq',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
