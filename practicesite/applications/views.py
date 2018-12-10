@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from applications.models import Application 
 from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+from applications.models import Application 
 
 # Create your views here.
 def index(request):
@@ -40,3 +44,17 @@ class ApplicationsListView(generic.ListView):
 
 class ApplicationDetailView(generic.DetailView):
 	model = Application
+
+
+class ApplicationCreate(CreateView):
+	model = Application
+	fields = '__all__'
+	initial = {'status': 'p'}
+
+class ApplicationUpdate(UpdateView):
+	model = Application 
+	fields = '__all__'
+
+class ApplicationDelete(DeleteView):
+	model = Application
+	success_url = reverse_lazy('applications')
