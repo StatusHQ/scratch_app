@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # added to link to app 
+    # added to link to app
     'applications.apps.ApplicationsConfig',
 ]
 
