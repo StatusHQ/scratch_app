@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse # Used to generate URLs by reversing the URL patterns
+from django.contrib.auth.models import User
 
 #class CurrentApplications(models.Model):
 '''Model represting all current applications.'''
@@ -11,6 +12,7 @@ class Application(models.Model):
 	position = models.CharField(max_length = 50)
 	date_applied = models.DateField(null=True, blank=True)
 	deadline = models.DateField(null=True, blank=True)
+	#owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	APP_STATUS = (
 		('p', 'In Progress'),

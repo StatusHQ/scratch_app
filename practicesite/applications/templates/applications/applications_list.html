@@ -2,11 +2,14 @@
 
 {% block content %}
   <h1>Applications</h1>
+
+  <a href="{% url 'application_create' %}">Create new application</a>
+
   {% if applications_list %}
   <ul>
     {% for application in applications_list %}
       <li>
-        <a href="{{ application.get_absolute_url }}">{{ application.company }} {{ application.position }} </a> ({{ application.get_status_display }})
+        <a href="{{ application.get_absolute_url }}">{{ application.company }} {{ application.position }} </a> ({{ application.get_status_display }}) | <a href="{{ application.get_absolute_url }}/update">Edit</a> <a href="{{ application.get_absolute_url }}/delete">Delete</a>
       </li>
     {% endfor %}
   </ul>
