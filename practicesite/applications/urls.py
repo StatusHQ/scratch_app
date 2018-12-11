@@ -10,4 +10,5 @@ urlpatterns = [
 	path('applications/<int:pk>/update/', views.ApplicationUpdate.as_view(), name='application_update'),
 	path('applications/<int:pk>/delete/', views.ApplicationDelete.as_view(), name='application_delete'),
 	path('applications/signup/', views.signup, name='signup'),
+	path('myapplications/', views.UserApplicationsListView.as_view(), name='my_applications')
 ]

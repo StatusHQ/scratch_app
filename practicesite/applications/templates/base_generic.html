@@ -16,12 +16,17 @@
       {% block sidebar %}
         <ul class="sidebar-nav">
           <li><a class="btn btn-outline-primary" href="{% url 'index' %}">Home</a></li>
-          <li><a class="btn btn-outline-primary" href="{% url 'applications' %}">Applications</a></li>
           {% if user.is_authenticated %}
             <li>User: {{ user.get_username }}</li>
+            <li><a class="btn btn-outline-primary" href="{% url 'my_applications' %}">My Applications</a></li>
             <li><a class="btn btn-outline-primary" href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
           {% else %}
             <li><a class="btn btn-outline-primary" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+          {% endif %}
+
+          {% if perms.application.can_view_all_applications %}
+            Staff: 
+            <li><a class="btn btn-outline-primary" href="{% url 'applications' %}">All Applications</a></li>
           {% endif %}
         </ul>
      {% endblock %}

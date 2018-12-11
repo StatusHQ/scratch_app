@@ -12,7 +12,7 @@ class Application(models.Model):
 	position = models.CharField(max_length = 50)
 	date_applied = models.DateField(null=True, blank=True)
 	deadline = models.DateField(null=True, blank=True)
-	#owner = models.ForeignKey(User, on_delete=models.CASCADE)
+	owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
 	APP_STATUS = (
 		('p', 'In Progress'),
@@ -32,6 +32,7 @@ class Application(models.Model):
 
 	class Meta:
 		ordering = ['status']
+		permissions = (("can_view_all_applications", "View all applications"),)
 
 	def __str__(self):
 		'''String for representing the Model object'''

@@ -6,5 +6,5 @@ from applications.models import Application
 
 @admin.register(Application)
 class ApplicationAdmin(admin.ModelAdmin):
-	list_display = ('company', 'position', 'status', 'date_applied', 'deadline')
+	list_display = ('company', 'position', 'status', 'date_applied', 'deadline', 'owner')
 	list_filter = ('status', 'date_applied')
