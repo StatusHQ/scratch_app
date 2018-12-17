@@ -2,6 +2,15 @@ body {
   background-color: #EDF6F7;
 }
 
+a {
+  color: #000000;
+}
+
+a:hover {
+  text-decoration: none;
+  color:  #000000;
+}
+
 .sidebar-nav {
     margin-top: 20px;
     padding: 0;
@@ -36,3 +45,21 @@ body {
       background-color: #3DB8CE;
       border-color: #055EB7;
     }
+
+.application_card {
+  width: 80vw;
+  height: 140px;
+}
+
+.application_card:hover {
+  border-color: #055EB7;
+  border-width: 1.5px;
+}
+
+.card-title {
+  line-height: 12px;
+}
+
+.col-md {
+
+}
