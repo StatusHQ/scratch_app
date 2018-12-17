@@ -11,14 +11,13 @@ def index(request):
 
 # 
 # Individual pages for sections of professional profile
-def prof_section(request):
-	'''View function for home page of professional profile'''
-	return HttpResponse("Hello, you are in a section of your professional profile.")
+def prof_section(request, section_id):
+	return HttpResponse("Hello, you are at section %s in your professional profile." % section_id)
 # 
 # Page to edit a section
-def prof_edit(request):
+def prof_edit(request, section_id):
 	'''View function for home page of professional profile'''
-	return HttpResponse("Hello, you are to edit a section of your professional profile.")
+	return HttpResponse("Hello, you are here to edit section %s of your professional profile." % section_id)
 # 
 # Page to add a new section
 def prof_create(request):

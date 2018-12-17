@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Professional Profile</title>
+    </head>
+    <body>
+        <div class="container">
+            <p>
+                {{ section.section_name }}
+            </p>
+            <div>
+                <ul>
+                    {% for entry in entry_list %}
+                    <li class="rule_name">{{ entry.entry_name }}</li>
+                    <li class="rule_text">{{ entry.entry_text }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
