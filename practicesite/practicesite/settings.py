@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'django_tables2',
+    'prof_profile',
 
     # added to link to app
     'applications.apps.ApplicationsConfig',

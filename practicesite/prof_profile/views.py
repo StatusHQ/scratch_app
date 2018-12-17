@@ -2,12 +2,20 @@ from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
+from .models import ProfileSection
+
 # Create your views here.
 
 # Main page for the Professional Profile
 def index(request):
 	'''View function for home page of professional profile'''
-	return HttpResponse("Hello, you are at your professional profile.")
+
+	section_list = ProfileSection.objects.order_by('section_order')
+	context = {
+		'sections': section_list,
+	}
+
+	return render(request, 'prof_profile/index.html', context)
 
 # 
 # Individual pages for sections of professional profile

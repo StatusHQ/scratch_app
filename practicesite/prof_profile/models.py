@@ -7,6 +7,7 @@ class ProfileSection(models.Model):
 		return self.section_name
 
 	section_name = models.CharField(max_length=50)
+	section_order = models.IntegerField(default=0)
 
 
 class ProfileInfo(models.Model):
