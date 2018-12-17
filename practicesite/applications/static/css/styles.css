@@ -1,5 +1,6 @@
 body {
   background-color: #EDF6F7;
+  cursor: default;
 }
 
 .sidebar-nav {
@@ -7,7 +8,6 @@ body {
     padding: 0;
     list-style: none;
     background-color: #EDF6F7;
-
     font-size: 1.5rem;
 }
 
@@ -36,3 +36,11 @@ body {
       background-color: #3DB8CE;
       border-color: #055EB7;
     }
+
+.pointer {
+  cursor: pointer;
+}
+
+.default {
+  cursor: default;
+}

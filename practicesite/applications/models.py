@@ -31,7 +31,7 @@ class Application(models.Model):
 		help_text='Application status')
 
 	class Meta:
-		ordering = ['status']
+		ordering = ['company']
 		permissions = (("can_view_all_applications", "View all applications"),)
 
 	def __str__(self):
