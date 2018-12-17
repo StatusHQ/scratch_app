@@ -25,6 +25,9 @@ urlpatterns = [
     # forwards requests with the pattern applications/ to the module applications.urls (the file with the relative URL /applications/urls.py).
     path('applications/', include('applications.urls')),
 
+    # deal with professional profile data
+    path('prof_profile/', include('prof_profile.urls')),
+
     # add url to redirect the base url to our applications app
     path('', RedirectView.as_view(url='/applications/', permanent=True)),
 
