@@ -1,10 +1,23 @@
 <h1>Professional Profile</h1>
 
-
 <ul>
 	{% for section in sections %}
-		<li>{{ section.section_name }}</li>
+		<li>
+			<a href="/prof_profile/{{ section.id }}/">
+				{{ section.section_name }}
+			</a>
+			<ul>
+				{% for entry in section.profileentry_set.all %}
+					<li>{{ entry.entry_name }}</li>
+				{% endfor %}
+			</ul>
+		</li>
 	{% endfor %}
+	<li>
+		<a href="/prof_profile/create/">
+			Create New Section
+		</a>
+	</li>
 </ul>
 
 

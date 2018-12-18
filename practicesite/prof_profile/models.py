@@ -10,7 +10,7 @@ class ProfileSection(models.Model):
 	section_order = models.IntegerField(default=0)
 
 
-class ProfileInfo(models.Model):
+class ProfileEntry(models.Model):
 	def __str__(self):
 		return self.entry_name
 

@@ -13,9 +13,13 @@
             </p>
             <div>
                 <ul>
-                    {% for entry in entry_list %}
-                    <li class="rule_name">{{ entry.entry_name }}</li>
-                    <li class="rule_text">{{ entry.entry_text }}</li>
+                    {% for entry in section.profileentry_set.all %}
+                        <li>
+                            <strong>{{ entry.entry_name }}</strong>
+                        </li>
+                        <li>
+                            {{ '   '|join:entry.entry_text }}
+                        </li>
                     {% endfor %}
                 </ul>
             </div>

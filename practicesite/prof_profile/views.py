@@ -9,8 +9,8 @@ from .models import ProfileSection
 # Main page for the Professional Profile
 def index(request):
 	'''View function for home page of professional profile'''
-
 	section_list = ProfileSection.objects.order_by('section_order')
+
 	context = {
 		'sections': section_list,
 	}
@@ -20,7 +20,13 @@ def index(request):
 # 
 # Individual pages for sections of professional profile
 def prof_section(request, section_id):
-	return HttpResponse("Hello, you are at section %s in your professional profile." % section_id)
+    section = get_object_or_404(ProfileSection, pk=section_id)
+
+    context = {
+    	'section': section,
+    }
+
+    return render(request, 'prof_profile/prof_section.html', context)
 # 
 # Page to edit a section
 def prof_edit(request, section_id):
