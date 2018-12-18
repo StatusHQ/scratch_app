@@ -17,12 +17,30 @@
                         <li>
                             <strong>{{ entry.entry_name }}</strong>
                         </li>
-                        <li>
-                            {{ '   '|join:entry.entry_text }}
-                        </li>
+                        <ul>
+                            <li>
+                                {{ entry.entry_text }}
+                            </li>
+                        </ul>
                     {% endfor %}
                 </ul>
             </div>
+
+            <form action="{% url 'prof_profile:prof_section_edit' section.id %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="experience" placeholder="New Experience">
+                <input type="submit" value="Submit">
+            </form>
         </div>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+

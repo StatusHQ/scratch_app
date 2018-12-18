@@ -3,7 +3,7 @@
 <ul>
 	{% for section in sections %}
 		<li>
-			<a href="/prof_profile/{{ section.id }}/">
+			<a href="{% url 'prof_profile:prof_section' section.id %}">
 				{{ section.section_name }}
 			</a>
 			<ul>
